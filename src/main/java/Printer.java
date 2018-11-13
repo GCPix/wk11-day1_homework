@@ -27,8 +27,8 @@ public class Printer {
         int totalPages = noOfCopies*noOfPages;
         if(this.sheetsleft>totalPages) {
             if (this.tonerLevel > totalPages) {
-                this.sheetsleft = this.sheetsleft - totalPages;
-                this.tonerLevel = this.tonerLevel - totalPages;
+                reducePaper(totalPages);
+                reduceToner(totalPages);
                 return true;
             }
         }
@@ -38,5 +38,12 @@ public class Printer {
 
     public void refillPrinter(){
         this.sheetsleft = 500;
+    }
+
+    public void reducePaper(int totalPages){
+        this.sheetsleft = this.sheetsleft - totalPages;
+    }
+    public void reduceToner(int totalPages){
+        this.tonerLevel = this.tonerLevel - totalPages;
     }
 }
