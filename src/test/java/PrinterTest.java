@@ -14,7 +14,7 @@ public class PrinterTest {
     }
 
     @Test
-    public void printCanPrint(){
+    public void printCanPrintReducePaper(){
 
         assertTrue("This didn't return true", printer.print(1,1));
         assertEquals(499, printer.getSheetsleft());
